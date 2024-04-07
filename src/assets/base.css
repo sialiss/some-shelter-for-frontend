@@ -6,4 +6,83 @@
 }
 
 :root {
+	--pad-xs: .25rem;
+	--pad-s : .5rem;
+	--pad-m : 1rem;
+	--pad-l : 2rem;
+	--pad-xl: 4rem;
+	--color-primary: #F1CDB3;
+	--color-primary-light: #FDDCC4;
+	--color-light-xl: #FFFFFF;
+	--color-light-l: #FAFAFA;
+	--color-light-s: #F6F6F6;
+	--color-dark-s: #CDCDCD;
+	--color-dark-m: #B2B2B2;
+	--color-dark-l: #545454;
+	--color-dark-xl: #4C4C4C;
+	--color-dark-2xl: #444444;
+	--color-dark-3xl: #292929;
+	--color-dark-4xl: #000000;
+	--start-screen-gradient-background: #211F20;
+	--footer-gradient-background: #211F20;
+}
+
+html {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.flex {
+	display: flex;
+	gap: var(--pad-m);
+}
+.stack {
+	display: flex;
+	flex-direction: column;
+	gap: var(--pad-m);
+}
+.just-center {
+	justify-content: center;
+}
+.just-between {
+	justify-content: space-between;
+}
+.align-center {
+	align-items: center;
+}
+
+.fix-width {
+	max-width: 1200px;
+	margin-inline: auto;
+}
+
+.pad-xs {
+	padding: var(--pad-xs);
+}
+.pad-s {
+	padding: var(--pad-s);
+}
+.pad-m, .pad {
+	padding: var(--pad-m);
+}
+.pad-l {
+	padding: var(--pad-l);
+}
+.pad-xl {
+	padding: var(--pad-xl);
+}
+
+.gap-xs {
+	gap: var(--pad-xs);
+}
+.gap-s {
+	gap: var(--pad-s);
+}
+.gap-m, .gap {
+	gap: var(--pad-m);
+}
+.gap-l {
+	gap: var(--pad-l);
+}
+.gap-xl {
+	gap: var(--pad-xl);
 }

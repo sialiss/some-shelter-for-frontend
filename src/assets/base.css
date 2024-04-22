@@ -6,29 +6,30 @@
 }
 
 :root {
-	--pad-xs: .25rem;
-	--pad-s : .5rem;
-	--pad-m : 1rem;
-	--pad-l : 2rem;
+	--pad-xs: 0.25rem;
+	--pad-s: 0.5rem;
+	--pad-m: 1rem;
+	--pad-l: 2rem;
 	--pad-xl: 4rem;
-	--color-primary: #F1CDB3;
-	--color-primary-light: #FDDCC4;
-	--color-light-xl: #FFFFFF;
-	--color-light-l: #FAFAFA;
-	--color-light-s: #F6F6F6;
-	--color-dark-s: #CDCDCD;
-	--color-dark-m: #B2B2B2;
+	--color-primary: #f1cdb3;
+	--color-primary-light: #fddcc4;
+	--color-light-xl: #ffffff;
+	--color-light-l: #fafafa;
+	--color-light-s: #f6f6f6;
+	--color-dark-s: #cdcdcd;
+	--color-dark-m: #b2b2b2;
 	--color-dark-l: #545454;
-	--color-dark-xl: #4C4C4C;
+	--color-dark-xl: #4c4c4c;
 	--color-dark-2xl: #444444;
 	--color-dark-3xl: #292929;
 	--color-dark-4xl: #000000;
-	--start-screen-gradient-background: #211F20;
-	--footer-gradient-background: #211F20;
+	--start-screen-gradient-background: #211f20;
+	--start-screen-gradient-background-2: #5b483a;
+	--footer-gradient-background: #211f20;
 }
 
 html {
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .flex {
@@ -49,10 +50,17 @@ html {
 .align-center {
 	align-items: center;
 }
+.equal > * {
+	flex: 1;
+}
 
 .fix-width {
 	max-width: 1200px;
 	margin-inline: auto;
+}
+
+.screen {
+	min-height: 100vh;
 }
 
 .pad-xs {
@@ -61,7 +69,8 @@ html {
 .pad-s {
 	padding: var(--pad-s);
 }
-.pad-m, .pad {
+.pad-m,
+.pad {
 	padding: var(--pad-m);
 }
 .pad-l {
@@ -77,7 +86,8 @@ html {
 .gap-s {
 	gap: var(--pad-s);
 }
-.gap-m, .gap {
+.gap-m,
+.gap {
 	gap: var(--pad-m);
 }
 .gap-l {

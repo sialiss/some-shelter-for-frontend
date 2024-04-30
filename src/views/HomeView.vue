@@ -35,8 +35,31 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 				</div>
 			</div>
 		</div>
-		<div class="screen">
-			<h2>Что такое "Котопёсики"</h2>
+		<div class="about screen">
+			<div class="fix-width pad | flex equal | pad-xl">
+				<div class="flex just-center align-center">
+					<img src="/src/assets/images/about-pets.png" alt="котик и собачка" />
+				</div>
+				<div class="stack gap-l just-center pad-m">
+					<h3>Что такое "Котопёсики"</h3>
+					<p>
+						Lorem ipsum dolor sit amet consectetur, adipisicing
+						elit. Dolorum consequatur, corporis ratione natus facere
+						hic? Dolorum nisi quis, harum sint placeat praesentium
+						veritatis esse, nobis soluta voluptatibus, aspernatur
+						laboriosam suscipit.
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur, adipisicing
+						elit. Dolorum consequatur, corporis ratione natus facere
+						hic? Dolorum nisi quis, harum sint placeat praesentium
+						veritatis esse, nobis soluta voluptatibus, aspernatur
+						laboriosam suscipit.
+					</p>
+				</div>
+
+			</div>
+
 		</div>
 	</main>
 </template>
@@ -50,15 +73,15 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 	);
 }
 
-p {
+.first-screen p {
 	color: var(--color-dark-s);
 }
 
-h2 {
+.first-screen h2 {
 	color: var(--color-light-xl);
 }
 
-.padding-bottom {
-	padding-bottom: 0;
+.about h3 {
+	color: var(--color-dark-l);
 }
 </style>

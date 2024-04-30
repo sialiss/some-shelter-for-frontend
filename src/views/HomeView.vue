@@ -37,7 +37,7 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 		</div>
 		<div class="about screen">
 			<div class="fix-width pad | flex equal | pad-xl">
-				<div class="flex just-center align-center">
+				<div class="flex just-center">
 					<img src="/src/assets/images/about-pets.png" alt="котик и собачка" />
 				</div>
 				<div class="stack gap-l just-center pad-m">
@@ -57,9 +57,32 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 						laboriosam suscipit.
 					</p>
 				</div>
-
 			</div>
-
+		</div>
+		<div class="pets screen">
+			<div class="fix-width pad | stack equal | pad-xl align-center">
+				<h3>Малыши, которым нужен дом</h3>
+				<div class="flex align-center just-center gap-xl pad-l">
+					<button class="button-arrow">←</button>
+					<div class="stack card">
+						<img src="../assets/images/pets-katrine.png">
+						<p>Katrine</p>
+						<button class="button-secondary">Learn more</button>
+					</div>
+					<div class="stack card">
+						<img src="../assets/images/pets-jennifer.png">
+						<p>Jennifer</p>
+						<button class="button-secondary">Learn more</button>
+					</div>
+					<div class="stack card">
+						<img src="../assets/images/pets-woody.png">
+						<p>Woody</p>
+						<button class="button-secondary">Learn more</button>
+					</div>
+					<button class="button-arrow">→</button>
+				</div>
+				<RouterLink to="/pets" class="button-primary">Познакомиться со всеми</RouterLink>
+			</div>
 		</div>
 	</main>
 </template>
@@ -81,7 +104,22 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 	color: var(--color-light-xl);
 }
 
-.about h3 {
+a {
+	color: var(--color-dark-l);
+	text-decoration-line: none;
+}
+
+.about {
+	background-color: var(--color-light-xl);
+}
+
+.card {
+	background-color: var(--color-light-l);
+	padding: var(--pad-l);
+	align-items: center;
+}
+
+.card p {
 	color: var(--color-dark-l);
 }
 </style>

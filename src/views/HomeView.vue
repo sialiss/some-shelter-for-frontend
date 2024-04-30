@@ -16,8 +16,8 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 	<TheHeader fixed :transparent="isHeaderDark" :dark="isHeaderDark" />
 	<main>
 		<div class="first-screen screen | stack just-center">
-			<div class="fix-width pad | flex equal gap-xl">
-				<div class="stack gap-l">
+			<div class="fix-width pad | flex equal">
+				<div class="stack gap-l just-center pad-m">
 					<h2>Животным тоже нужен дом</h2>
 					<p>
 						Lorem ipsum dolor sit amet consectetur, adipisicing
@@ -27,10 +27,12 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 						laboriosam suscipit.
 					</p>
 					<div>
-						<button class="button">Приютить животное</button>
+						<button class="button button-primary">Приютить животное</button>
 					</div>
 				</div>
-				<img src="" alt="котик" />
+				<div>
+					<img src="/src/assets/images/start-screen-puppy.png" alt="пёсик" />
+				</div>
 			</div>
 		</div>
 		<div class="screen">
@@ -46,5 +48,17 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 		var(--start-screen-gradient-background),
 		var(--start-screen-gradient-background-2)
 	);
+}
+
+p {
+	color: var(--color-dark-s);
+}
+
+h2 {
+	color: var(--color-light-xl);
+}
+
+.padding-bottom {
+	padding-bottom: 0;
 }
 </style>

@@ -1,5 +1,4 @@
-макет в фигме:
-https://www.figma.com/file/adwqrK9Efu8IW2pjHxS4sw/shelter-dom-(Copy)?type=design&node-id=94%3A43&mode=dev&t=0dP56O7Rz8jx3tJf-1
+[макет в фигме](https://www.figma.com/file/adwqrK9Efu8IW2pjHxS4sw/shelter-dom-(Copy)?type=design&node-id=94%3A43&mode=design&t=cDNwjL3w6XonNW7C-1)
 
 пофиксить:
 

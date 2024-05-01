@@ -3,15 +3,17 @@ import { computed, ref } from "vue"
 import { pets } from "../pets/pets"
 import PetCard from "./PetCard.vue"
 
+const perPage = 3
+
 const petsPage = ref(0)
 const displayedPets = computed(() =>
-	pets.slice(petsPage.value * 3, petsPage.value * 3 + 3)
+	pets.slice(petsPage.value * perPage, petsPage.value * perPage + perPage)
 )
 
 function setPage(page: number) {
 	petsPage.value = Math.min(
 		Math.max(page, 0),
-		Math.ceil((pets.length - 3) / 3)
+		Math.ceil((pets.length - perPage) / perPage)
 	)
 }
 </script>

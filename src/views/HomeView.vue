@@ -27,18 +27,26 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 						laboriosam suscipit.
 					</p>
 					<div>
-						<button class="button button-primary">Приютить животное</button>
+						<button class="button button-primary">
+							Приютить животное
+						</button>
 					</div>
 				</div>
 				<div>
-					<img src="/src/assets/images/start-screen-puppy.png" alt="пёсик" />
+					<img
+						src="/src/assets/images/start-screen-puppy.png"
+						alt="пёсик"
+					/>
 				</div>
 			</div>
 		</div>
-		<div class="about screen">
+		<div class="about screen | stack just-center">
 			<div class="fix-width pad | flex equal | pad-xl">
 				<div class="flex just-center">
-					<img src="/src/assets/images/about-pets.png" alt="котик и собачка" />
+					<img
+						src="/src/assets/images/about-pets.png"
+						alt="котик и собачка"
+					/>
 				</div>
 				<div class="stack gap-l just-center pad-m">
 					<h3>Что такое "Котопёсики"</h3>
@@ -59,29 +67,39 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 				</div>
 			</div>
 		</div>
-		<div class="pets screen">
+		<div class="pets screen | stack just-center">
 			<div class="fix-width pad | stack equal | pad-xl align-center">
 				<h3>Малыши, которым нужен дом</h3>
 				<div class="flex align-center just-center gap-xl pad-l">
-					<button class="button-arrow">←</button>
+					<button class="button-arrow">
+						<img src="../assets/icons/left-arrow.svg" alt="назад" />
+					</button>
 					<div class="stack card">
-						<img src="../assets/images/pets-katrine.png">
-						<p>Katrine</p>
+						<img src="../assets/images/pets-katrine.png" />
+						<p>Катенька</p>
 						<button class="button-secondary">Learn more</button>
 					</div>
 					<div class="stack card">
-						<img src="../assets/images/pets-jennifer.png">
-						<p>Jennifer</p>
+						<img src="../assets/images/pets-jennifer.png" />
+						<p>Дженни</p>
 						<button class="button-secondary">Learn more</button>
 					</div>
 					<div class="stack card">
-						<img src="../assets/images/pets-woody.png">
-						<p>Woody</p>
+						<img src="../assets/images/pets-woody.png" />
+						<p>Деревце</p>
 						<button class="button-secondary">Learn more</button>
 					</div>
-					<button class="button-arrow">→</button>
+					<button class="button-arrow">
+						<img
+							src="../assets/icons/left-arrow.svg"
+							class="right-arrow"
+							alt="назад"
+						/>
+					</button>
 				</div>
-				<RouterLink to="/pets" class="button-primary">Познакомиться со всеми</RouterLink>
+				<RouterLink to="/pets" class="button-primary"
+					>Познакомиться со всеми</RouterLink
+				>
 			</div>
 		</div>
 	</main>
@@ -117,9 +135,20 @@ a {
 	background-color: var(--color-light-l);
 	padding: var(--pad-l);
 	align-items: center;
+	border-radius: 30px;
+	box-shadow: 0px 0px 0px #0000;
+	transition: box-shadow 0.6s;
+}
+.card:hover {
+	box-shadow: 0px 20px 30px #0002;
+	transition: box-shadow 0.3s;
 }
 
 .card p {
 	color: var(--color-dark-l);
+}
+
+.right-arrow {
+	rotate: 180deg;
 }
 </style>

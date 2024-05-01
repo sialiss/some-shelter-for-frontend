@@ -101,7 +101,9 @@ html {
 	background-color: var(--color-primary);
 	color: var(--color-dark-3xl);
 	padding: var(--pad-m) var(--pad-l);
+	border: 0 solid;
 	border-radius: 30px;
+	cursor: pointer;
 }
 
 .button-secondary {
@@ -109,8 +111,9 @@ html {
 	color: var(--color-dark-3xl);
 	font-size: smaller;
 	padding: var(--pad-s) var(--pad-l);
+	border: 2px solid var(--color-primary);
 	border-radius: 30px;
-	border-color: var(--color-primary);
+	cursor: pointer;
 }
 
 img {
@@ -129,19 +132,21 @@ h3 {
 
 .button-arrow {
 	line-height: 2;
-	width: 40px;
+	min-width: 40px;
 	height: 40px;
 	background-color: transparent;
+	border: 2px solid var(--color-primary);
 	border-radius: 50%;
-	border-color: var(--color-primary);
+	cursor: pointer;
 }
 
 .button-arrow:hover {
 	background-color: var(--color-primary-light);
-	border-color: transparent;
+	border: none;
 }
 
 .button-arrow:inactive {
 	border-color: var(--color-dark-s);
 	color: var(--color-dark-s);
+	cursor: default;
 }

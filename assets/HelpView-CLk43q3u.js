@@ -1,0 +1,1 @@
+import{d as a,a as s,b as t,F as n,e,o,T as r}from"./index-YMa3ZnGh.js";const c=e("main",null,[e("div",{class:"about"},[e("h1",null,"HELP US")])],-1),p=a({__name:"HelpView",setup(l){return(_,d)=>(o(),s(n,null,[t(r),c],64))}});export{p as default};

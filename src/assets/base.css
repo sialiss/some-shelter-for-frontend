@@ -53,6 +53,9 @@ html {
 .equal > * {
 	flex: 1;
 }
+.wrap {
+	flex-wrap: wrap;
+}
 
 .fix-width {
 	max-width: 1200px;
@@ -127,6 +130,7 @@ img {
 
 h2 {
 	font-size: 2rem;
+	font-family: "Times New Roman", Times, serif;
 }
 
 h3 {

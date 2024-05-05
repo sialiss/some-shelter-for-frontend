@@ -31,7 +31,9 @@ function setPage(page: number) {
 			<button class="button-arrow" @click="setPage(petsPage - 1)">
 				<img src="../assets/icons/left-arrow.svg" alt="назад" />
 			</button>
-			{{ petsPage + 1 }}
+			<div class="circle">
+				{{ petsPage + 1 }}
+			</div>
 			<button class="button-arrow" @click="setPage(petsPage + 1)">
 				<img
 					src="../assets/icons/left-arrow.svg"
@@ -60,5 +62,14 @@ main {
 
 .pagination {
 	margin-top: var(--pad-l);
+}
+
+.circle {
+	line-height: 2;
+	min-width: 40px;
+	height: 40px;
+	text-align: center;
+	background-color: var(--color-primary-light);
+	border-radius: 50%;
 }
 </style>

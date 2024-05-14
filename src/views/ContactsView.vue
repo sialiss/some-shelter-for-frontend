@@ -44,23 +44,25 @@ function showModal(title, message) {
 				<div class="fix-width pad | stack equal">
 					<div class="stack just-center">
 						<h2>Для вопросов и предложений</h2>
-						<p>
-							Lorem ipsum dolor sit amet consectetur, adipisicing
-							elit. Dolorum consequatur, corporis ratione natus facere
-							hic? Dolorum nisi quis, harum sint placeat praesentium
-							veritatis esse, nobis soluta voluptatibus, aspernatur
-							laboriosam suscipit.
-						</p>
+						<div class="contact-icons stack pad gap-l">
+							<a href="mailto:your@example.com">
+								<img src="/src/assets/icons/icon-email.svg" alt="" class="icon" />
+								meow@example.com
+							</a>
+							<a href="tel:+1234567890">
+								<img src="/src/assets/icons/icon-phone.svg" alt="" class="icon" />
+								+1 (234) 567-890
+							</a>
+						</div>
 					</div>
 					<div>
 						<h2>Мы ждём Вашего визита</h2>
-						<p>
-							Lorem ipsum dolor sit amet consectetur, adipisicing
-							elit. Dolorum consequatur, corporis ratione natus facere
-							hic? Dolorum nisi quis, harum sint placeat praesentium
-							veritatis esse, nobis soluta voluptatibus, aspernatur
-							laboriosam suscipit.
-						</p>
+						<div class="contact-icons stack pad gap-l">
+							<a href="https://maps.app.goo.gl/ELsDd15BvfyhQ66EA">
+								<img src="/src/assets/icons/icon-marker.svg" alt="" class="icon" />
+								Санкт-Петербург, Большая Морская ул., 67
+							</a>
+						</div>
 					</div>
 				</div>
 				<div class="fix-width pad stack just-center">
@@ -100,8 +102,8 @@ function showModal(title, message) {
 	color: var(--color-light-xl);
 }
 
-a {
-	color: var(--color-dark-l);
+.contacts a {
+	color: var(--color-light-l);
 	text-decoration-line: none;
 }
 

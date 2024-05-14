@@ -1,41 +1,92 @@
 <script setup lang="ts">
-import { computed, ref } from "vue"
+import { computed, effect, onMounted, onUnmounted, ref } from "vue"
 import { pets } from "../pets/pets"
 import PetCard from "./PetCard.vue"
 
-const perPage = 3
+const perPage = ref(3)
 
 const petsPage = ref(0)
 const displayedPets = computed(() =>
-	pets.slice(petsPage.value * perPage, petsPage.value * perPage + perPage)
+	pets.slice(
+		petsPage.value * perPage.value,
+		petsPage.value * perPage.value + perPage.value
+	)
 )
 
 function setPage(page: number) {
 	petsPage.value = Math.min(
 		Math.max(page, 0),
-		Math.ceil((pets.length - perPage) / perPage)
+		Math.ceil((pets.length - perPage.value) / perPage.value)
 	)
 }
+
+const onResize = ref(() => {
+	if (window.innerWidth <= 880) {
+		perPage.value = 1
+	} else if (window.innerWidth <= 1200) {
+		perPage.value = 2
+	} else {
+		perPage.value = 3
+	}
+})
+
+onMounted(() => {
+	window.addEventListener("resize", onResize.value)
+	onResize.value()
+})
+
+onUnmounted(() => {
+	window.removeEventListener("resize", onResize.value)
+})
 </script>
 
 <template>
-	<div class="fix-width | flex align-center just-center gap-xl pad-l">
-		<button class="button-arrow" @click="setPage(petsPage - 1)">
+	<div
+		class="slider | fix-width | flex align-center just-center gap-xl pad-l"
+	>
+		<button
+			v-if="perPage > 1"
+			class="button-arrow"
+			@click="setPage(petsPage - 1)"
+		>
 			<img src="../assets/icons/left-arrow.svg" alt="назад" />
 		</button>
 		<PetCard v-for="pet in displayedPets" :key="pet.id" :pet="pet" />
-		<button class="button-arrow" @click="setPage(petsPage + 1)">
+		<button
+			v-if="perPage > 1"
+			class="button-arrow"
+			@click="setPage(petsPage + 1)"
+		>
 			<img
 				src="../assets/icons/left-arrow.svg"
 				class="right-arrow"
 				alt="назад"
 			/>
 		</button>
+		<div v-if="perPage == 1" class="flex equal">
+			<button class="button-arrow" @click="setPage(petsPage - 1)">
+				<img src="../assets/icons/left-arrow.svg" alt="назад" />
+			</button>
+			<button class="button-arrow" @click="setPage(petsPage + 1)">
+				<img
+					src="../assets/icons/left-arrow.svg"
+					class="right-arrow"
+					alt="назад"
+				/>
+			</button>
+		</div>
 	</div>
 </template>
 
 <style scoped>
 .right-arrow {
 	rotate: 180deg;
+}
+
+@media screen and (max-width: 880px) {
+	.slider {
+		flex-direction: column;
+		gap: var(--pad-m);
+	}
 }
 </style>

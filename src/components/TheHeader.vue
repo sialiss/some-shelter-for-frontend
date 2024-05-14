@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from "vue"
+
 const { fixed } = defineProps({
 	fixed: {
 		type: Boolean,
@@ -19,6 +21,12 @@ const { fixed } = defineProps({
 		}
 	}
 })
+
+const isNavOpen = ref(false)
+
+function toggleNav() {
+	isNavOpen.value = !isNavOpen.value
+}
 </script>
 
 <template>
@@ -28,12 +36,15 @@ const { fixed } = defineProps({
 				<span class="title">Котопёсики</span>
 				<span class="subtitle">Чудные зверушки</span>
 			</h1>
-			<nav class="flex align-center">
+			<button @click="toggleNav">Navigation</button>
+			<nav :class="{ open: isNavOpen }" class="flex align-center">
+				<button @click="toggleNav">Navigation</button>
 				<RouterLink to="/">О приюте</RouterLink>
 				<RouterLink to="/pets">Наши зверушки</RouterLink>
 				<RouterLink to="/help">Помочь приюту</RouterLink>
 				<RouterLink to="/contacts">Контакты</RouterLink>
 			</nav>
+			<!-- <button class="open-nav">Navigation</button> -->
 		</div>
 	</header>
 </template>
@@ -58,6 +69,7 @@ header {
 }
 
 a {
+	min-width: max-content;
 	color: var(--color-dark-l);
 	text-decoration-line: none;
 }
@@ -90,5 +102,40 @@ header.fixed {
 }
 header.transparent {
 	background-color: transparent;
+}
+
+header button {
+	display: none;
+}
+
+@media screen and (max-width: 800px) {
+	header button {
+		display: initial;
+	}
+
+	nav {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100vh;
+
+		display: flex;
+		flex-direction: column;
+		padding: var(--pad-m);
+
+		background: var(--start-screen-gradient-background-2);
+		translate: 100%;
+		transition: translate 0.2s;
+	}
+	nav.open {
+		translate: 0;
+	}
+
+	header a {
+		color: var(--color-dark-s);
+	}
+	header a.router-link-active {
+		color: var(--color-light-l);
+	}
 }
 </style>

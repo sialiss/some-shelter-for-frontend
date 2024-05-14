@@ -17,7 +17,7 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 	<TheHeader fixed :transparent="isHeaderDark" :dark="isHeaderDark" />
 	<main>
 		<div class="first-screen screen | stack just-center">
-			<div class="fix-width pad | flex equal">
+			<div class="layout | fix-width pad | flex equal">
 				<div class="stack gap-l just-center pad-m">
 					<h2>Животным тоже нужен дом</h2>
 					<p>
@@ -42,7 +42,7 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 			</div>
 		</div>
 		<div class="about screen | stack just-center">
-			<div class="fix-width pad | flex equal | pad-xl">
+			<div class="layout fix-width pad | flex equal | pad-xl">
 				<div class="flex just-center">
 					<img
 						src="/src/assets/images/about-pets.png"
@@ -69,7 +69,7 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 			</div>
 		</div>
 		<div class="pets screen | stack just-center">
-			<div class="fix-width pad | stack equal | pad-xl align-center">
+			<div class="fix-width pad | stack equal | align-center">
 				<h3>Малыши, которым нужен дом</h3>
 				<PetsSlider />
 				<RouterLink to="/pets" class="button-primary"
@@ -104,5 +104,19 @@ a {
 
 .about {
 	background-color: var(--color-light-xl);
+}
+
+.pets.screen > .stack {
+	padding-block: var(--pad-xl);
+}
+
+@media screen and (max-width: 800px) {
+	.first-screen .layout {
+		padding-top: 100px;
+		flex-direction: column;
+	}
+	.about.screen .layout {
+		flex-direction: column-reverse;
+	}
 }
 </style>

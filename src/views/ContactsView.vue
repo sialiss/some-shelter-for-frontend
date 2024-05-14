@@ -83,6 +83,9 @@ function showModal(title, message) {
 					</form>
 				</div>
 			</div>
+			<div class="fix-width puppy">
+				<img class="puppy" src=" /src/assets/images/footer-puppy.png">
+			</div>
 		</div>
 	</main>
 </template>
@@ -105,6 +108,10 @@ function showModal(title, message) {
 .contacts a {
 	color: var(--color-light-l);
 	text-decoration-line: none;
+}
+
+.puppy {
+	bottom: 0;
 }
 
 .form-container {

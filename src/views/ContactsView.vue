@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import TheHeader from "../components/TheHeader.vue"
 import { ref, onBeforeMount, onUnmounted } from "vue"
+import { ALLUSERSPROFILE } from '../../../portfolio/.svelte-kit/ambient';
 
 const isHeaderDark = ref(true)
 
@@ -41,7 +42,7 @@ function showModal(title, message) {
 	<main>
 		<div class="contacts screen | stack just-center">
 			<div class="fix-width pad | flex equal">
-				<div class="fix-width pad | stack equal">
+				<div class="fix-width pad | stack equal links">
 					<div class="stack just-center">
 						<h2>Для вопросов и предложений</h2>
 						<div class="contact-icons stack pad gap-l">
@@ -157,6 +158,26 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
 	background-color: #6d4c41;
-	/* темно-коричневый */
+}
+
+@media screen and (max-width: 1280px) {
+}
+
+@media screen and (max-width: 768px) {
+
+	.contacts .fix-width {
+		display: block;
+		flex-direction: column-reverse;
+	}
+}
+
+@media screen and (max-width: 320px) {
+
+	/* ваш стиль для 320px */
+	.contacts .fix-width {
+		display: block;
+			flex-direction: column-reverse;
+		font-size: 0.7rem;
+	}
 }
 </style>

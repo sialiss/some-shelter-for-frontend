@@ -31,20 +31,18 @@ const closeModal = () => { isModalOpen.value = false; };
 	</div>
 
 	<div v-if="isModalOpen" class="modal-overlay pad-l" @click.self="closeModal">
-		<div class="modal-content">
-			<div class="flex">
-				<img :src="pet.image" class="modal-image" />
-				<div class="modal-body">
-					<h2>{{ pet.name }}</h2>
-					<!-- <p><strong>Breed:</strong> {{ pet.breed }}</p>
-					<p><strong>Age:</strong> {{ pet.age }}</p>
-					<p><strong>Inoculations:</strong> {{ pet.inoculations }}</p>
-					<p><strong>Diseases:</strong> {{ pet.diseases }}</p>
-					<p><strong>Parasites:</strong> {{ pet.parasites }}</p> -->
-					<p>{{ pet.bio }}</p>
-				</div>
-				<button class="modal-close button-arrow" @click="closeModal">×</button>
+		<div class="flex modal-content">
+			<img :src="pet.image" class="modal-image" />
+			<div class="modal-body">
+				<h2>{{ pet.name }}</h2>
+				<!-- <p><strong>Breed:</strong> {{ pet.breed }}</p>
+				<p><strong>Age:</strong> {{ pet.age }}</p>
+				<p><strong>Inoculations:</strong> {{ pet.inoculations }}</p>
+				<p><strong>Diseases:</strong> {{ pet.diseases }}</p>
+				<p><strong>Parasites:</strong> {{ pet.parasites }}</p> -->
+				<p>{{ pet.bio }}</p>
 			</div>
+			<button class="modal-close button-arrow" @click="closeModal">×</button>
 		</div>
 	</div>
 </template>
@@ -72,6 +70,7 @@ const closeModal = () => { isModalOpen.value = false; };
 	position: relative;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	animation: fadeIn 0.3s ease;
+	align-items: center;
 }
 
 .modal-close {
@@ -81,6 +80,7 @@ const closeModal = () => { isModalOpen.value = false; };
 }
 
 .modal-image {
+	max-width: fit-content;
 	width: 100%;
 	border-radius: 8px;
 }
@@ -88,7 +88,6 @@ const closeModal = () => { isModalOpen.value = false; };
 .modal-body {
 	width: 100%;
 	margin-top: 15px;
-	justify-content: center;
 }
 
 @keyframes fadeIn {
@@ -100,6 +99,35 @@ const closeModal = () => { isModalOpen.value = false; };
 	to {
 		opacity: 1;
 		transform: translateY(0);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.modal-content {
+		flex-direction: column;
+	}
+
+	.modal-body {
+		margin: 0;
+	}
+
+	.modal-image {
+		padding-top: 35px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.modal-body {
+		font-size: small;
+	}
+	
+	.modal-image {
+		display: none;
+	}
+
+	.modal-close {
+		top: 5px;
+		right: 5px;
 	}
 }
 </style>

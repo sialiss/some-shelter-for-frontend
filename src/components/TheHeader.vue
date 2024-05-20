@@ -44,7 +44,6 @@ function toggleNav() {
 				<RouterLink to="/help">Помочь приюту</RouterLink>
 				<RouterLink to="/contacts">Контакты</RouterLink>
 			</nav>
-			<!-- <button class="open-nav">☰</button> -->
 		</div>
 	</header>
 </template>

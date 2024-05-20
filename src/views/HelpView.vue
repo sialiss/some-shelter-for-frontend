@@ -137,5 +137,9 @@ h2 {
 	.help-item {
 		width: 30%;
 	}
+
+	.card-number {
+		font-size: small;
+	}
 }
 </style>

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import TheHeader from "../components/TheHeader.vue"
 import { ref, onBeforeMount, onUnmounted } from "vue"
-import { ALLUSERSPROFILE } from '../../../portfolio/.svelte-kit/ambient';
 
 const isHeaderDark = ref(true)
 
@@ -17,20 +16,15 @@ const email = ref("");
 const feedback = ref("");
 
 function submitForm() {
-	// Проверка заполнения обязательных полей
 	if (!name.value || !email.value) {
 		showModal("Ошибка", "Пожалуйста, заполните все обязательные поля.");
 		return;
 	}
 
-	// Другие проверки формы, например, проверка email через регулярное выражение
-
 	showModal("Успех", "Форма успешно отправлена!");
 }
 
-// Функция для отображения модального окна
-function showModal(title, message) {
-	// Реализация модального окна (например, с помощью библиотеки или своего собственного кода)
+function showModal(title: string, message: string) {
 	alert(`${title}: ${message}`);
 }
 

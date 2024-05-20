@@ -36,15 +36,15 @@ function toggleNav() {
 				<span class="title">Котопёсики</span>
 				<span class="subtitle">Чудные зверушки</span>
 			</h1>
-			<button @click="toggleNav">Navigation</button>
-			<nav :class="{ open: isNavOpen }" class="flex align-center">
-				<button @click="toggleNav">Navigation</button>
+			<button @click="toggleNav" class="nav-btn">☰</button>
+			<nav :class="{ open: isNavOpen } " class="flex align-center">
+				<button @click="toggleNav" class="nav-btn nav-btn-open rotate">☰</button>
 				<RouterLink to="/">О приюте</RouterLink>
 				<RouterLink to="/pets">Наши зверушки</RouterLink>
 				<RouterLink to="/help">Помочь приюту</RouterLink>
 				<RouterLink to="/contacts">Контакты</RouterLink>
 			</nav>
-			<!-- <button class="open-nav">Navigation</button> -->
+			<!-- <button class="open-nav">☰</button> -->
 		</div>
 	</header>
 </template>
@@ -81,6 +81,18 @@ a.router-link-active {
 	text-decoration-thickness: 2px;
 }
 
+.nav-btn {
+	background-color: transparent;
+	color: var(--color-dark-l);
+	border: none;
+}
+.rotate {
+	transform: rotate(-90deg);
+}
+.nav-btn-open {
+	color: var(--color-primary);
+}
+
 /* Props */
 
 header.dark .title {
@@ -95,6 +107,9 @@ header.dark a {
 header.dark a.router-link-active {
 	color: var(--color-light-l);
 }
+header.dark .nav-btn {
+	color: var(--color-primary);
+}
 
 header.fixed {
 	position: fixed;
@@ -104,11 +119,12 @@ header.transparent {
 	background-color: transparent;
 }
 
+
 header button {
 	display: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
 	header button {
 		display: initial;
 	}

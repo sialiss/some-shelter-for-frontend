@@ -113,7 +113,7 @@ a {
 
 @media screen and (max-width: 800px) {
 	.first-screen .layout {
-		padding-top: 100px;
+		padding-top: 20px;
 		flex-direction: column;
 	}
 	.about.screen .layout {

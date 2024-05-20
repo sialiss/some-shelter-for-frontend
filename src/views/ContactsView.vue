@@ -91,6 +91,7 @@ function showModal(title: string, message: string) {
 		var(--start-screen-gradient-background),
 		var(--start-screen-gradient-background-2)
 	);
+	padding-top: 75px;
 }
 
 .contacts p {
@@ -106,16 +107,16 @@ function showModal(title: string, message: string) {
 	text-decoration-line: none;
 }
 
-.puppy {
-	bottom: 0;
-}
-
 .form-container {
 	max-width: 400px;
 	margin: 0 auto;
 	padding: 20px;
 	background-color: #f5f5f5;
 	border-radius: 8px;
+}
+
+img {
+	vertical-align: middle;
 }
 
 .form-group {

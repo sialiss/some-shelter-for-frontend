@@ -87,6 +87,7 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 		var(--start-screen-gradient-background),
 		var(--start-screen-gradient-background-2)
 	);
+	padding-top: 75px;
 }
 
 .first-screen p {

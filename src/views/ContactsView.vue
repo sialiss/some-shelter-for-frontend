@@ -3,6 +3,10 @@ import TheHeader from "../components/TheHeader.vue"
 import { ref, onBeforeMount, onUnmounted } from "vue"
 
 const isHeaderDark = ref(true)
+const alert = ref({
+	title: 'Unknown error',
+	text: 'Unknown error'
+});
 
 function scrollHandler() {
 	isHeaderDark.value = window.scrollY == 0
@@ -15,19 +19,26 @@ const name = ref("");
 const email = ref("");
 const feedback = ref("");
 
+const isModalOpen = ref(false);
+const openModal = () => { isModalOpen.value = true; };
+const closeModal = () => { isModalOpen.value = false; };
+
 function submitForm() {
+	const re = /^[\w.]+@[\w.]+\.\w+$/
 	if (!name.value || !email.value) {
 		showModal("Ошибка", "Пожалуйста, заполните все обязательные поля.");
 		return;
+	} else if (!re.test(email.value)) {
+		showModal("Ошибка", "Пожалуйста, проверьте правильность заполнения почтового адреса.");
+		return;
 	}
-
 	showModal("Успех", "Форма успешно отправлена!");
 }
 
-function showModal(title: string, message: string) {
-	alert(`${title}: ${message}`);
+function showModal(title: string, text: string) {
+	alert.value = { title, text };
+	openModal();
 }
-
 
 </script>
 
@@ -68,7 +79,7 @@ function showModal(title: string, message: string) {
 						</div>
 						<div class="form-group">
 							<label for="email">Email:</label>
-							<input type="email" id="email" v-model="email" required>
+							<input type="text" id="email" v-model="email" required>
 						</div>
 						<div class="form-group">
 							<label for="feedback">Отзыв:</label>
@@ -76,6 +87,15 @@ function showModal(title: string, message: string) {
 						</div>
 						<button type="submit">Отправить</button>
 					</form>
+					<div v-if="isModalOpen" class="modal-overlay pad-l" @click.self="closeModal">
+						<div class="modal-content">
+							<div class="modal-body">
+								<h2>{{ alert.title }}</h2>
+								<p>{{ alert.text }}</p>
+							</div>
+							<button class="modal-close button-arrow" @click="closeModal">×</button>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="fix-width puppy">
@@ -150,6 +170,51 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
 	background-color: #6d4c41;
+}
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.modal-content {
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+	max-width: 500px;
+	width: 100%;
+	position: relative;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	animation: fadeIn 0.3s ease;
+}
+
+.modal-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.modal-image {
+	width: 100%;
+	border-radius: 8px;
+}
+
+.modal-body {
+	width: 100%;
+	margin-top: 15px;
+	justify-content: center;
+}
+
+.modal-body p, .modal-body h2 {
+	color: var(--color-dark-4xl);
 }
 
 @media screen and (max-width: 1280px) {

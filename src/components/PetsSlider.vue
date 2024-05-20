@@ -21,9 +21,9 @@ function setPage(page: number) {
 }
 
 const onResize = ref(() => {
-	if (window.innerWidth <= 880) {
+	if (window.innerWidth <= 768) {
 		perPage.value = 1
-	} else if (window.innerWidth <= 1200) {
+	} else if (window.innerWidth <= 1280) {
 		perPage.value = 2
 	} else {
 		perPage.value = 3
@@ -83,7 +83,7 @@ onUnmounted(() => {
 	rotate: 180deg;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 768px) {
 	.slider {
 		flex-direction: column;
 		gap: var(--pad-m);

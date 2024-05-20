@@ -1,23 +1,42 @@
 <script setup lang="ts">
 import TheHeader from "../components/TheHeader.vue"
 
-import { computed, ref } from "vue"
+import { computed, ref, onMounted, onUnmounted } from "vue"
 import { pets } from "../pets/pets"
 import PetCard from "../components/PetCard.vue"
 
-const perPage = 8
+const perPage = ref(8)
+
+const onResize = ref(() => {
+	if (window.innerWidth <= 768) {
+		perPage.value = 3
+	} else if (window.innerWidth <= 1280) {
+		perPage.value = 6
+	} else {
+		perPage.value = 8
+	}
+})
 
 const petsPage = ref(0)
 const displayedPets = computed(() =>
-	pets.slice(petsPage.value * perPage, petsPage.value * perPage + perPage)
+	pets.slice(petsPage.value * perPage.value, petsPage.value * perPage.value + perPage.value)
 )
 
 function setPage(page: number) {
 	petsPage.value = Math.min(
 		Math.max(page, 0),
-		Math.ceil((pets.length - perPage) / perPage)
+		Math.ceil((pets.length - perPage.value) / perPage.value)
 	)
 }
+
+onMounted(() => {
+	window.addEventListener("resize", onResize.value)
+	onResize.value()
+})
+
+onUnmounted(() => {
+	window.removeEventListener("resize", onResize.value)
+})
 </script>
 
 <template>
@@ -71,5 +90,17 @@ main {
 	text-align: center;
 	background-color: var(--color-primary-light);
 	border-radius: 50%;
+}
+
+@media screen and (max-width: 1280px) {
+	.grid {
+	grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
 }
 </style>

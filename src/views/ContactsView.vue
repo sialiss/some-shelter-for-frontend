@@ -41,11 +41,11 @@ function showModal(title: string, message: string) {
 						<h2>Для вопросов и предложений</h2>
 						<div class="contact-icons stack pad gap-l">
 							<a href="mailto:your@example.com">
-								<img src="/src/assets/icons/icon-email.svg" alt="" class="icon" />
+								<img src="/src/assets/icons/icon-email.svg" alt="" class="icon pad-s" />
 								meow@example.com
 							</a>
 							<a href="tel:+1234567890">
-								<img src="/src/assets/icons/icon-phone.svg" alt="" class="icon" />
+								<img src="/src/assets/icons/icon-phone.svg" alt="" class="icon pad-s" />
 								+1 (234) 567-890
 							</a>
 						</div>
@@ -54,7 +54,7 @@ function showModal(title: string, message: string) {
 						<h2>Мы ждём Вашего визита</h2>
 						<div class="contact-icons stack pad gap-l">
 							<a href="https://maps.app.goo.gl/ELsDd15BvfyhQ66EA">
-								<img src="/src/assets/icons/icon-marker.svg" alt="" class="icon" />
+								<img src="/src/assets/icons/icon-marker.svg" alt="" class="icon pad-s" />
 								Санкт-Петербург, Большая Морская ул., 67
 							</a>
 						</div>
@@ -88,8 +88,9 @@ function showModal(title: string, message: string) {
 <style>
 .contacts {
 	background-image: linear-gradient(-45deg,
-			var(--start-screen-gradient-background),
-			var(--start-screen-gradient-background-2));
+		var(--start-screen-gradient-background),
+		var(--start-screen-gradient-background-2)
+	);
 }
 
 .contacts p {
@@ -114,7 +115,6 @@ function showModal(title: string, message: string) {
 	margin: 0 auto;
 	padding: 20px;
 	background-color: #f5f5f5;
-	/* светло-коричневый */
 	border-radius: 8px;
 }
 
@@ -126,7 +126,6 @@ function showModal(title: string, message: string) {
 	display: block;
 	margin-bottom: 5px;
 	color: var(--color-light-xl);
-	/* темно-коричневый */
 }
 
 .form-group input,
@@ -134,7 +133,6 @@ function showModal(title: string, message: string) {
 	width: 100%;
 	padding: 10px;
 	border: 1px solid #795548;
-	/* коричневый */
 	border-radius: 4px;
 }
 
@@ -143,7 +141,6 @@ button[type="submit"] {
 	width: 100%;
 	padding: 10px;
 	background-color: #795548;
-	/* коричневый */
 	color: #fff;
 	border: none;
 	border-radius: 4px;
@@ -166,11 +163,9 @@ button[type="submit"]:hover {
 }
 
 @media screen and (max-width: 320px) {
-
-	/* ваш стиль для 320px */
 	.contacts .fix-width {
 		display: block;
-			flex-direction: column-reverse;
+		flex-direction: column-reverse;
 		font-size: 0.7rem;
 	}
 }

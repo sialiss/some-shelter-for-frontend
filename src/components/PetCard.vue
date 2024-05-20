@@ -30,8 +30,8 @@ const closeModal = () => { isModalOpen.value = false; };
 		</div>
 	</div>
 
-	<div v-if="isModalOpen" class="modal-overlay pad-m" @click.self="closeModal">
-		<div class="modal-content flex">
+	<div v-if="isModalOpen" class="modal-overlay pad-l" @click.self="closeModal">
+		<div class="modal-content">
 			<div class="flex">
 				<img :src="pet.image" class="modal-image" />
 				<div class="modal-body">
@@ -86,7 +86,9 @@ const closeModal = () => { isModalOpen.value = false; };
 }
 
 .modal-body {
+	width: 100%;
 	margin-top: 15px;
+	justify-content: center;
 }
 
 @keyframes fadeIn {

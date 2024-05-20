@@ -1,13 +1,5 @@
 [макет в фигме](https://www.figma.com/file/adwqrK9Efu8IW2pjHxS4sw/shelter-dom-(Copy)?type=design&node-id=94%3A43&mode=design&t=cDNwjL3w6XonNW7C-1)
-
-пофиксить:
-
--   [x] центрировать див на второй и третьей страничке
--   [ ] на третьей страничке доделать галерею
--   [x] убрать жмых - стрелочек
--   [x] убрать тень у границы кнопок я не знаю откуда она
--   [~] картинку на первой странице до конца фона
-
+<!---
 # kitis
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -47,3 +39,4 @@ npm run build
 ```sh
 npm run lint
 ```
+-->

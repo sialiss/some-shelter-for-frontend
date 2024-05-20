@@ -157,6 +157,7 @@ h3 {
 	border-color: var(--color-dark-s);
 	color: var(--color-dark-s);
 	cursor: default;
+	pointer-events: none;
 }
 
 .card {

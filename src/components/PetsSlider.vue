@@ -14,10 +14,16 @@ const displayedPets = computed(() =>
 )
 
 function setPage(page: number) {
+	const end = Math.ceil((pets.length - perPage.value) / perPage.value);
+	const prevButtons = document.querySelectorAll(".prev");
+	const nextButtons = document.querySelectorAll(".next");
+
 	petsPage.value = Math.min(
 		Math.max(page, 0),
-		Math.ceil((pets.length - perPage.value) / perPage.value)
+		end
 	)
+	prevButtons.forEach(btn => btn.toggleAttribute("disabled", petsPage.value === 0));
+	nextButtons.forEach(btn => btn.toggleAttribute("disabled", petsPage.value === end));
 }
 
 const onResize = ref(() => {
@@ -46,7 +52,7 @@ onUnmounted(() => {
 	>
 		<button
 			v-if="perPage > 1"
-			class="button-arrow"
+			class="button-arrow prev" disabled
 			@click="setPage(petsPage - 1)"
 		>
 			<img src="../assets/icons/left-arrow.svg" alt="назад" />
@@ -54,24 +60,24 @@ onUnmounted(() => {
 		<PetCard v-for="pet in displayedPets" :key="pet.id" :pet="pet" />
 		<button
 			v-if="perPage > 1"
-			class="button-arrow"
+			class="button-arrow next"
 			@click="setPage(petsPage + 1)"
 		>
 			<img
 				src="../assets/icons/left-arrow.svg"
 				class="right-arrow"
-				alt="назад"
+				alt="вперед"
 			/>
 		</button>
 		<div v-if="perPage == 1" class="flex equal">
-			<button class="button-arrow" @click="setPage(petsPage - 1)">
+			<button class="button-arrow prev" @click="setPage(petsPage - 1)" disabled>
 				<img src="../assets/icons/left-arrow.svg" alt="назад" />
 			</button>
-			<button class="button-arrow" @click="setPage(petsPage + 1)">
+			<button class="button-arrow next" @click="setPage(petsPage + 1)">
 				<img
 					src="../assets/icons/left-arrow.svg"
 					class="right-arrow"
-					alt="назад"
+					alt="вперед"
 				/>
 			</button>
 		</div>

@@ -23,10 +23,16 @@ const displayedPets = computed(() =>
 )
 
 function setPage(page: number) {
+	const end = Math.ceil((pets.length - perPage.value) / perPage.value);
+	const prevButtons = document.querySelectorAll(".prev");
+	const nextButtons = document.querySelectorAll(".next");
+
 	petsPage.value = Math.min(
 		Math.max(page, 0),
-		Math.ceil((pets.length - perPage.value) / perPage.value)
+		end
 	)
+	prevButtons.forEach(btn => btn.toggleAttribute("disabled", petsPage.value === 0));
+	nextButtons.forEach(btn => btn.toggleAttribute("disabled", petsPage.value === end));
 }
 
 onMounted(() => {
@@ -47,18 +53,14 @@ onUnmounted(() => {
 			<PetCard v-for="pet in displayedPets" :key="pet.id" :pet="pet" />
 		</div>
 		<div class="pagination | flex gap-l just-center align-center">
-			<button class="button-arrow" @click="setPage(petsPage - 1)">
+			<button class="button-arrow prev" @click="setPage(petsPage - 1)" disabled>
 				<img src="../assets/icons/left-arrow.svg" alt="назад" />
 			</button>
 			<div class="circle">
 				{{ petsPage + 1 }}
 			</div>
-			<button class="button-arrow" @click="setPage(petsPage + 1)">
-				<img
-					src="../assets/icons/left-arrow.svg"
-					class="right-arrow"
-					alt="назад"
-				/>
+			<button class="button-arrow next" @click="setPage(petsPage + 1)">
+				<img src="../assets/icons/left-arrow.svg" class="right-arrow" alt="вперед" />
 			</button>
 		</div>
 	</main>
@@ -84,7 +86,7 @@ main {
 }
 
 .circle {
-	line-height: 2;
+	line-height: 2.5;
 	min-width: 40px;
 	height: 40px;
 	text-align: center;

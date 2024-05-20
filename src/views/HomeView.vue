@@ -111,6 +111,10 @@ a {
 	padding-block: var(--pad-xl);
 }
 
+.pets a {
+	color: var(--color-dark-3xl);
+}
+
 @media screen and (max-width: 800px) {
 	.first-screen .layout {
 		padding-top: 20px;

@@ -1,4 +1,8 @@
-[макет в фигме](https://www.figma.com/file/adwqrK9Efu8IW2pjHxS4sw/shelter-dom-(Copy)?type=design&node-id=94%3A43&mode=design&t=cDNwjL3w6XonNW7C-1)
+[макет в фигме](https://www.figma.com/design/adwqrK9Efu8IW2pjHxS4sw/shelter?node-id=94%3A43&t=RB1TnbK8RGyzhz0b-1)
+
+Установка зависимостей: npm install
+Запуск предпросмотра: npm run dev
+Билд: npm run build
 <!---
 # kitis
 

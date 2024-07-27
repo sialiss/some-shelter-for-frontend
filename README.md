@@ -1,8 +1,9 @@
 [макет в фигме](https://www.figma.com/design/adwqrK9Efu8IW2pjHxS4sw/shelter?node-id=94%3A43&t=RB1TnbK8RGyzhz0b-1)
+В качестве макета был использован измененный под требования макет с RS School 2022.
 
-Установка зависимостей: npm install
-Запуск предпросмотра: npm run dev
-Билд: npm run build
+Установка зависимостей: npm install  
+Запуск предпросмотра: npm run dev  
+Билд: npm run build  
 <!---
 # kitis
 

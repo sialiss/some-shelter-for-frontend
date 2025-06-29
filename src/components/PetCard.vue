@@ -26,7 +26,7 @@ const closeModal = () => { isModalOpen.value = false; };
 		<img :src="pet.image" class="card-image" />
 		<div class="card-body">
 			<p>{{ pet.name }}</p>
-			<button class="button-secondary" @click="openModal">Learn more</button>
+			<button class="button-secondary" @click="openModal">Узнать больше</button>
 		</div>
 	</div>
 

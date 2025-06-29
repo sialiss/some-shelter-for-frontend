@@ -27,10 +27,10 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 						veritatis esse, nobis soluta voluptatibus, aspernatur
 						laboriosam suscipit.
 					</p>
-					<div>
-						<button class="button button-primary">
-							Приютить животное
-						</button>
+					<div class="mobile-center">
+						<RouterLink to="/contacts" class="button-primary"
+							>Приютить животное</RouterLink
+						>
 					</div>
 				</div>
 				<div>
@@ -98,6 +98,10 @@ onUnmounted(() => document.removeEventListener("scroll", scrollHandler))
 	color: var(--color-light-xl);
 }
 
+.first-screen a {
+	color: var(--color-dark-3xl);
+}
+
 a {
 	color: var(--color-dark-l);
 	text-decoration-line: none;
@@ -122,6 +126,11 @@ a {
 	}
 	.about.screen .layout {
 		flex-direction: column-reverse;
+	}
+
+	.mobile-center {
+		display: flex;
+		align-self: center;
 	}
 }
 </style>
